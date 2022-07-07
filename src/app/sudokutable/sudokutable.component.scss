@@ -1,0 +1,34 @@
+table {
+  padding-top: 50px;
+  margin-left: 50px;
+}
+
+td {
+  height: 75px;
+  width: 75px;
+}
+
+input {
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance:textfield; /* Firefox */
+}
+
+button {
+  border: 1px solid black;
+  margin-top: 25px;
+  margin-left: 150px;
+  height: 75px;
+  width: 250px;
+}

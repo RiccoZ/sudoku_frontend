@@ -1,0 +1,8 @@
+<table>
+  <tr *ngFor="let row of sudoku; let i = index">
+    <td *ngFor="let column of row; let f = index">
+      <input id="{{'input' + (f + (i*9))}}" type="number" value={{column}} (input)="inputfilter('input' + (f + (i*9)).toString())">
+    </td>
+  </tr>
+</table>
+<button (click) = get()>Lösen</button>
