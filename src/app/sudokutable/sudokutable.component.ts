@@ -33,8 +33,18 @@ export class SudokutableComponent implements OnInit {
 
   public get() {
     this._httpService.testGet(this.getSudoku()).subscribe(data => {
-      console.log(data);
+      this.setSudoku(data);
     });
+  }
+
+  public clear() {
+    let list = document.getElementsByClassName("inputnum");
+
+    for(let i = 0; i < list.length; i++) {
+      let item = <HTMLInputElement>list[i];
+      item.value = "";
+    }
+
   }
 
   public getSudoku() {
@@ -46,6 +56,15 @@ export class SudokutableComponent implements OnInit {
     }
 
     return this.sudoku.toString();
+  }
+
+  public setSudoku(sudokustring: string) {
+    let list = document.getElementsByClassName("inputnum");
+
+    for(let i = 0; i < list.length; i++) {
+      let item = <HTMLInputElement>list[i];
+      item.value = sudokustring.charAt(i*2);
+    }
   }
 
 
